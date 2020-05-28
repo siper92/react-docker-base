@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  fe:
+    stdin_open: true
+    build: ./
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+      - 9009:9009
+    environment:
+      NODE_ENV: development
+    command: /app/entrypoint.sh
